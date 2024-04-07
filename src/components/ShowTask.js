@@ -9,6 +9,10 @@ export const ShowTask = ({tasklist, setTasklist, task, setTask}) => {
         const updatedTasklist = tasklist.filter(todo => todo.id !== id);
         setTasklist(updatedTasklist);
     }
+    const handleClearAll = () => {
+        setTasklist([]);
+        setTask({});
+    } 
 
   return (
     <section className="showTask">
@@ -17,7 +21,7 @@ export const ShowTask = ({tasklist, setTasklist, task, setTask}) => {
                 <span className="title">Todo</span>
                 <span className="count">{tasklist.length}</span>
             </div>
-            <button onClick={() => setTasklist([])} className="clearAll">Clear All</button>
+            <button onClick={handleClearAll} className="clearAll">Clear All</button>
         </div>
         <ul>
             { tasklist.map((todo) => (

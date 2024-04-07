@@ -2,6 +2,11 @@ export const AddTask = ({tasklist, setTasklist, task, setTask}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const inputValue = e.target.task.value.trim();
+    if (!inputValue) {
+      alert("Please enter a task."); 
+      return;
+    }
 
     if(task.id){
       const date = new Date();

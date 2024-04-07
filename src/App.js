@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Header />
       <AddTask 
-        tasklist={tasklist} 
+        tasklist={tasklist } 
         setTasklist={setTasklist} 
         task={task}
         setTask={setTask}
